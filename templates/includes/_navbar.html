@@ -1,0 +1,61 @@
+ 
+ <!-- <nav class="navbar navbar-expand-md navbar-light bg-light" > -->
+ <nav class="navbar navbar-expand-md navbar-dark bg-dark" >
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">CEIC</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExample04">   
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <!-- <li class="nav-item active">
+                <a class="nav-link active"  href="/">Acceuil<span class="sr-only"></span></a>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link active"  href="/drh">Mes demandes émises</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="/dcp">Mes demandes validées</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active"  href="/dsi">Mes demandes autorisées</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active"  href="/caisse">Mes demandes traitées</a>
+          </li> -->
+         
+        </ul>
+
+        <ul class="navbar-nav navbar-right">  
+          {% if session.logged_in %}
+
+           <div class="dropdown" >
+               <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               <!-- <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> -->
+                {{session.email}}
+              </button>
+
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <!-- <li class="nav-item">
+                  <a class="dropdown-item"  href="/change_pass">Changer de mdp</a>
+                </li> -->
+                <li class="nav-item">
+                  <a class="dropdown-item"  href="/logout">Se deconnecter</a>
+                </ul>
+ 
+          </div> 
+
+          {% else %} 
+            <li class="nav-item">
+              <a class="nav-link active"  href="/register">Créer Compte</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active"  href="/login">Se connecter</a>
+            </li>
+          {% endif %}
+        </ul>
+     
+</div>
+    </div>
+  </nav> 

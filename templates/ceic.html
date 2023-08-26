@@ -1,0 +1,56 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<h1 align="center">Centre d'Echange et d'Information sur le Credit</h1><br>
+<!-- <a class="btn btn-success" href="/ajouter_demande"> Ajouter une demande</a></br><br> 
+    <form method="POST" action="" enctype=multipart/form-data>
+   <div class="form-group">
+       <label>Titre</label>
+      <input type="text" name="title" class="form-control" value="{{ request.form.title }}">
+   </div><br> 
+
+   <div class="form-group">
+      <label>Caisse</label>
+      <input type="file" name="caisse"  multiple class="form-control" value="{{ request.form.caisse }}">
+   </div><br> 
+
+   <div class="form-group">
+      <label>Fichier</label>
+      <input type="file" name="file"  multiple class="form-control" value="{{ request.form.file }}">
+   </div><br>  
+
+    <div class="form-group">
+      <label>Commentaire</label>
+      <input type="textArea" name="comment" class="form-control" value="{{ request.form.comment }}">
+   </div> <br> 
+   <button type="submit" class="btn btn-primary" value="Submit">Ajouter la demande</button> 
+ </form>  -->
+
+   
+   
+
+{%from "includes/_formhelpers.html" import render_field %} 
+<form method = 'POST' action="" enctype=multipart/form-data>
+
+   <div class = form-group >
+      {{ render_field(form.caisse, class_="form-control")}}
+     </div><br>
+
+   <!-- <input type="file" name="file" multiple><br><br> -->
+   <!-- <div class = form-group>
+   <input type="file" name="file" multiple>
+  </div><br>   -->
+   <!-- <div class = form-group>
+   {{ render_field(form.comment, class_="form-control", id="editor")}}
+  </div><br>  -->
+  <div class="form-group">
+   <label>Fichier</label>
+   <input type="file" name="file"  multiple class="form-control" value="{{ request.form.file }}">
+</div><br>  
+  <button type="submit" class="btn btn-success" value="Submit"> <input type="submit" value="">Envoyer la requette</button>
+  <br>
+</form> 
+
+{% endblock %} 
+

@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <h1>Login</h1>
+  <form method="POST" action="">
+  <!-- <form method="POST" action="" style="text-align:center"></form> -->
+    <div class="form-group">
+      <label>Email</label>
+      <input type="text" name="email" class="form-control" value="{{ request.form.email }}">
+   </div>
+    <div class="form-group">
+        <label>Mot de passe</label>
+        <input type="password" name="password" class="form-control" value="{{ request.form.password }}">
+     </div>
+     <div class="form-group">
+       
+     </div><br>
+     <button type="submit" class="btn btn-primary" value="Submit">Connecter</button>
+  </form> 
+{% endblock %}
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <h1>Login page</h1>
+    <a href="{{url_for('register')}}">Creer un compte si vous en avez pas</a>
+</body>
+</html> -->

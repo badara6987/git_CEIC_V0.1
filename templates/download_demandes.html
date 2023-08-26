@@ -1,0 +1,6 @@
+{% for filename in files %}
+<a href="{{ url_for('download_demandesfile', filename=filename)}}"> {{ filename }} </a> <br>
+{% endfor %}
+<div style="width: 50%;margin-left: 25%;margin-top: 58px;">
+    {{ tables|safe }}
+ </div>

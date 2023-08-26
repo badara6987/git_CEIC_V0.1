@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="jumbobotron text-center">
+
+   <h1>Bienvenue sur la page de gestion des autorisations</h1>
+   <p>Cette page vous permet de faire des demandes d'autorisition tout en vous offrant une suivie sur l'état de la demande.</p>
+   {% if session.logged_in == NULL %}          
+      <a href="{{url_for('register')}}" class="btn btn-success btn-lg" >Creer un compte</a>
+      <a href="{{url_for('login')}}" class="btn btn-primary btn-lg">Se connecter</a>
+   {% endif %}
+
+</div> 
+{% endblock %}
+
+

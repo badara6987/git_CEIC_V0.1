@@ -1,0 +1,35 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+    <h1>Register Page</h1>
+    <a href="{{url_for('login')}}">Deja un compte</a>
+</body>
+</html> -->
+
+{% extends 'layout.html' %}
+
+{% block body %}
+  <h1>Register</h1>
+   {%from "includes/_formhelpers.html" import render_field %}
+  <form method="POST" action="">
+    <div class="form-group">
+       {{render_field(form.nom, class_="form-control")}} 
+    </div>
+    <div class="form-group">
+      {{render_field(form.email, class_="form-control")}} 
+   </div>
+    <div class="form-group">
+        {{render_field(form.password, class_="form-control")}} 
+     </div>
+     <div class="form-group">
+        {{render_field(form.confirm, class_="form-control")}} 
+     </div><br>
+     <p><input type="submit" class="btn btn-primary" value="Submit"></p>
+  </form> 
+{% endblock %}
