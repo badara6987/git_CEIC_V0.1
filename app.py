@@ -37,7 +37,7 @@ app.config['SECRET_KEY'] = 'supersecretkey'
 #MySQL config
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'b'
+app.config['MYSQL_PASSWORD'] = ''
 
 app.config['MYSQL_DB'] = 'autorisation' #'basicBD'
 app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
@@ -82,7 +82,7 @@ def connect_to_Sqlserver():
         colonne = ['COD_EMPRESA','AGENCE','NUM_CLIENT','NOM_CLIENT','NUMERO_CREDIT','DATE_D\'OUVERTURE','MONTANT_DEBOURSE',
                 'SOLDE_CREDIT','ETAT','COD_ESTADO_COMPTABLE','DES_ESTADO_COMPTABLE','FEC_VENCIMIENTO','COD_ID','NUM_ID']
         df = pd.DataFrame(columns = colonne)
-        for serveur in ("10.10.120.40\pamecas_SQL", "10.10.120.41", "10.10.120.42"):
+        for serveur in ("SVR1", "SVR2", "SVR3"):
             conn = pyodbc.connect(
                 "Driver={SQL Server};Server="+serveur+";UID=test;PWD=test;Database=reporting;")
   
@@ -91,7 +91,7 @@ def connect_to_Sqlserver():
                     [COD_EMPRESA]
                     ,[AGENCE]
                     ,[NUM_CLIENT]
-                    ,[NOM_CLIENT]
+                    ,[NOM_CLIENT] 
                     ,[NUMERO_CREDIT]
                     ,[DATE_D'OUVERTURE]
                     ,[MONTANT_DEBOURSE]
